@@ -1,7 +1,7 @@
 # Team Smart not Hard : PGC
 ## Members:
 - [Peng Chen](https://github.com/PengChen11)
-- [Corey Marchand]()
+- [Corey Marchand](https://github.com/corey-marchand)
 - [H Griffin](https://github.com/h-griffin)
 
 # [Heroku Deployed Site]()
