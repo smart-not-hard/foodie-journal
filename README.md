@@ -4,9 +4,10 @@
 - [Corey Marchand]()
 - [H Griffin](https://github.com/h-griffin)
 
-# [GitHub Repo](https://github.com/smart-not-hard/foodie-journal)
 # [Heroku Deployed Site]()
 # [Vercel Deployed Site]()
+# [GitHub Repo](https://github.com/smart-not-hard/foodie-journal)
+# [GitHub Project Board](https://github.com/smart-not-hard/foodie-journal/projects/1)
 
 # Project description: 
 ## Foodie Journal :
