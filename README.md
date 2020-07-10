@@ -13,6 +13,15 @@
 ## Foodie Journal :
 a place to find and save recipes, to custom user accounts, saving to a database
 
+## whiteboard 
+![whiteboard 1](assets/WB1.png)
+
+## Entity Relationship Diagram
+![ERD 1](assets/ERD1.png)
+
+## User Stories
+view github project board for user stories
+
 ## Tools
 Django
 Docker
