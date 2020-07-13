@@ -168,6 +168,15 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
+AUTH_USER_MODEL = {
+    'recipes.CustomUser',
+}
+
+LOGIN_REDIRECT_URL = 'home'
+
+LOGOUT_REDIRECT_URL = 'home'
+
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
