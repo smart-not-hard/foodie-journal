@@ -1,7 +1,7 @@
-from django.contrib.auth.models import AbstractUser
+
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.contrib.auth.admin import UserAdmin
+
 
 
 # Create your models here.
@@ -17,8 +17,3 @@ class Recipe(models.Model):
     def __str__(self):
         return self.name[:16]  # [:16] new title limit from 64
 
-class CustomUser(AbstractUser):
-    email = models.EmailField(unique=True)
-
-    def __str__(self):
-        return self.username
