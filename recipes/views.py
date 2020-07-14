@@ -19,5 +19,4 @@ class RecipesDetail(RetrieveUpdateDestroyAPIView):
 
 
 
-# class RecipeCreate(ListCreateAPIView):
 
