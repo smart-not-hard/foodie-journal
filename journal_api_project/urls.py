@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('recipes.urls'), name='home'),
     path('', include('django.contrib.auth.urls')),
     path('api-auth/', include('rest_framework.urls')), 
+    path('/api-auth/login/', include('recipes.urls'), name='home'),
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
