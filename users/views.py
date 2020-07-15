@@ -13,7 +13,6 @@ class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('recipes_list')
     serializer_class = UserSerializer
-    
     # redirect_field_name = 'home'
 
 class UserCreate(generics.CreateAPIView):

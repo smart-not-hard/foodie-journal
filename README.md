@@ -4,7 +4,7 @@
 - [Corey Marchand](https://github.com/corey-marchand)
 - [H Griffin](https://github.com/h-griffin)
 
-# [Heroku Deployed Site]()
+# [Heroku Deployed Backend](https://foodie-journal.herokuapp.com/)
 # [Vercel Deployed Site]()
 # [GitHub Repo](https://github.com/smart-not-hard/foodie-journal)
 # [GitHub Project Board](https://github.com/smart-not-hard/foodie-journal/projects/1)
@@ -23,22 +23,26 @@ a place to find and save recipes, to custom user accounts, saving to a database
 view github project board for user stories
 
 ## Tools
+#### Front End: 
+React.js
+Next.js
+bootstrap
+sass
+vercel
+
+#### Back End:
 Python
 Django
 Docker
-React.js
-Next.js
 PostgreSQL
 SQLite
 ElephantSQL
-bootstrap
-sass
 heroku/aws
-vercel
 
 
 ## [click to see step by step set up/creation](progress.md)
 
 ## Links and Resources 
+- [vercel CDN](https://vercel.com/edge-network)
 
 

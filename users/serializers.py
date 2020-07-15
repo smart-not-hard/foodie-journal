@@ -3,12 +3,6 @@ from django.contrib.auth.models import User
 
 from .models import CustomUser
 
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         exclude = ()
-#         model = CustomUser
-        
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser

@@ -18,14 +18,3 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = ('username', 'email')
 
-# class UserCreationFormExtended(UserCreationForm): 
-#     def __init__(self, *args, **kwargs): 
-#         super(UserCreationFormExtended, self).__init__(*args, **kwargs) 
-#         self.fields['email'] = forms.EmailField(label=_("E-mail"), max_length=75)
-# UserAdmin.add_form = UserCreationFormExtended
-# UserAdmin.add_fieldsets = (
-#     (None, {
-#         'classes': ('wide',),
-#         'fields': ('email', 'username', 'password1', 'password2',)
-#     }),
-# )
