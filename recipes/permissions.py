@@ -8,3 +8,4 @@ class ISAuthorOrReadOnly(permissions.BasePermission):
 
     #write only allowed to author
     return obj.author == request.user
+    

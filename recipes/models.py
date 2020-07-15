@@ -1,7 +1,7 @@
-from django.contrib.auth.models import AbstractUser
+
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.contrib.auth.admin import UserAdmin
+
 
 
 # Create your models here.
@@ -14,5 +14,6 @@ class Recipe(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __Str__(self):
-        return self.name[:16]  # [:16] new limit from 64
+    def __str__(self):
+        return self.title[:16]  # [:16] new title limit from 64
+

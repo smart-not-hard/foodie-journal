@@ -12,43 +12,31 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 # #####################   ENV   ##########################
-# import environ
+import environ
 
-# env = environ.Env(
-#   # set casting, default value
-#   DEBUG=(bool, False),
-#   ENVIRONMENT=(str, 'PRODUCTION'),
-# )
+env = environ.Env(
+  # set casting, default value
+  DEBUG=(bool, False),
+  ENVIRONMENT=(str, 'PRODUCTION'),
+)
 
-# #read env file
-# environ.Env.read_env()
+#read env file
+environ.Env.read_env()
 
-# ENVIRONMENT= env.str('ENVIRONMENT')
+ENVIRONMENT= env.str('ENVIRONMENT')
 # ########################################################
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'r(!w5xdap*ynewpv=kt*=%z$z)nxvn2k6dafaj4r4d5o+fqm4c'
+# #####################   ENV   ##########################
+SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG')
 
-ALLOWED_HOSTS = ['0.0.0.0','localhost','127.0.0.1']
-    
-# #####################   ENV   ##########################
-# SECRET_KEY = env.str('SECRET_KEY')
-
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = env.bool('DEBUG')
-
-# ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS'))
+ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS'))
 # ########################################################
 
 
@@ -70,6 +58,7 @@ INSTALLED_APPS = [
 
     # local
     'recipes.apps.RecipesConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -110,15 +99,15 @@ WSGI_APPLICATION = 'journal_api_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': env('DB_NAME'),
-        # 'USER': env('DB_USER'),
-        # 'PASSWORD': env('DB_PASSWORD'),
-        # 'HOST': env('DB_HOST'),  # match to service in docker-compose
-        # 'PORT': env('DB_PORT'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),  # match to service in docker-compose
+        'PORT': env('DB_PORT'),
     }
 }
 
@@ -168,10 +157,18 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
+AUTH_USER_MODEL = 'users.CustomUser'
+
+
+LOGIN_REDIRECT_URL = './settings/home'
+
+LOGOUT_REDIRECT_URL = 'home'
+
+
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',

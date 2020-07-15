@@ -70,13 +70,10 @@ touch **recipes/serializers.py**
 **recipes.tests.py**
 - basic content test
 
-
+made superuser
 
 
 #############   NOT DONE YET  ############
-
-have not made superuser
-
 
  SQLite >> PostgreSQL
 **db.sqlite3**
