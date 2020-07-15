@@ -1,7 +1,5 @@
 from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView, ListCreateAPIView  #, APIView
 from django.urls import reverse_lazy
-# from django.views.generic.detail import DetailView
-# from django.views.generic.edit import CreateView
 
 from .models import Recipe
 from .serializers import RecipesSerializer
