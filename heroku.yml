@@ -7,4 +7,4 @@ build:
       - mkdir -p static
       - python manage.py collectstatic --noinput
   run:
-    web: gunicorn snacks_api_project.wsgi
+    web: gunicorn journal_api_project.wsgi
