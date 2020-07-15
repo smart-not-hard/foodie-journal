@@ -5,7 +5,7 @@ from rest_framework_simplejwt import views as jwt_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api/v1/', include('recipes.urls')),
-    path('api/v1/recipes/', include('recipes.urls')),
+    path('api/', include('recipes.urls')),
     path('', include('django.contrib.auth.urls')),
     path('custom-users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
