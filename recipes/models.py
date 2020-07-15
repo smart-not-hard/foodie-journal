@@ -15,5 +15,5 @@ class Recipe(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name[:16]  # [:16] new title limit from 64
+        return self.title[:16]  # [:16] new title limit from 64
 
