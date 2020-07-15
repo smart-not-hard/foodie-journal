@@ -15,6 +15,18 @@ class RecipesDetail(RetrieveUpdateDestroyAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipesSerializer
 
+class BreakfastApiView(ListCreateAPIView):
+    queryset = Recipe.objects.filter(meal_type='Breakfast')
+    serializer_class = RecipesSerializer
+
+class LunchApiView(ListCreateAPIView):
+    queryset = Recipe.objects.filter(meal_type='Lunch')
+    serializer_class = RecipesSerializer
+
+class DinnerApiView(ListCreateAPIView):
+    queryset = Recipe.objects.filter(meal_type='Dinner')
+    serializer_class = RecipesSerializer
+
 
 
 
