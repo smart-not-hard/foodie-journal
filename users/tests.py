@@ -1,6 +1,7 @@
 from django.db.utils import IntegrityError
 from django.contrib.auth import get_user_model
 from django.test import TestCase
+
 from .models import CustomUser
 
 class TestCustomUser(TestCase):
