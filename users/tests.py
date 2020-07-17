@@ -5,7 +5,7 @@ from .models import CustomUser
 
 class TestCustomUser(TestCase):
 
-    def test_creation(self):
+    def test_user_creation(self):
         user = get_user_model().objects.create_user(
             username='tester',
             email='tester@email.com',
@@ -35,3 +35,38 @@ class TestCustomUser(TestCase):
 
         else:
             self.fail('no bueno')
+    
+    def test_no_dupe_username(self):
+        user_1 = get_user_model().objects.create_user(
+            username='tester',
+            email='tester@email.com',
+            password='pass'
+        )
+
+        try:
+            user_2 = get_user_model().objects.create_user(
+                username='tester',
+                email='testerNOT@email.com',
+                password='pass'
+            )
+        except IntegrityError:
+
+            print('all good')
+
+        else:
+            self.fail('no bueno')
+
+    def test_no_password(self):
+        try:
+            user_1 = get_user_model().objects.create_user(
+                username='tester',
+                email='tester@email.com',
+                password=''
+            )
+
+        except IntegrityError:
+
+            self.fail('no bueno')
+
+        else:
+            print('all good')

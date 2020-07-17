@@ -14,16 +14,16 @@ import os
 # #####################   ENV   ##########################
 import environ
 
-env = environ.Env(
-  # set casting, default value
-  DEBUG=(bool, False),
-  ENVIRONMENT=(str, 'PRODUCTION'),
-)
+# env = environ.Env(
+#   # set casting, default value
+#   DEBUG=(bool, False),
+#   ENVIRONMENT=(str, 'PRODUCTION'),
+# )
 
 #read env file
-environ.Env.read_env()
+# environ.Env.read_env()
 
-ENVIRONMENT= env.str('ENVIRONMENT')
+# ENVIRONMENT= env.str('ENVIRONMENT')
 # ########################################################
 
 
@@ -31,12 +31,12 @@ ENVIRONMENT= env.str('ENVIRONMENT')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # #####################   ENV   ##########################
-SECRET_KEY = env.str('SECRET_KEY')
-
+# SECRET_KEY = env.str('SECRET_KEY')
+SECRET_KEY = 'r(!w5xdap*ynewpv=kt*=%z$z)nxvn2k6dafaj4r4d5o+fqm4c'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DEBUG')
+# DEBUG = env.bool('DEBUG')
 
-ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS'))
+# ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS'))
 # ########################################################
 
 
@@ -99,15 +99,15 @@ WSGI_APPLICATION = 'journal_api_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),  # match to service in docker-compose
-        'PORT': env('DB_PORT'),
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': env('DB_NAME'),
+        # 'USER': env('DB_USER'),
+        # 'PASSWORD': env('DB_PASSWORD'),
+        # 'HOST': env('DB_HOST'),  # match to service in docker-compose
+        # 'PORT': env('DB_PORT'),
     }
 }
 
