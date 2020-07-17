@@ -1,21 +1,13 @@
-from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView
-from django.contrib.auth.forms import UserCreationForm
-from rest_framework import generics
-from django.contrib.auth.models import User 
-
-
-from .forms import CustomUserCreationForm
+from rest_framework.generics import ListAPIView, CreateAPIView
 from .models import CustomUser
-from .serializers import UserSerializer
+from .serializers import UserCreateSerializer, UserListSerializer 
 
-class SignUpView(CreateView):
-    form_class = CustomUserCreationForm
-    success_url = reverse_lazy('recipes_list')
-    serializer_class = UserSerializer
-    # redirect_field_name = 'home'
 
-class UserCreate(generics.CreateAPIView):
+class UserCreate(CreateAPIView):
     queryset = CustomUser.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = ()
+    serializer_class = UserCreateSerializer
+    # permission_classes = ()
+
+class UserListView(ListAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserListSerializer
