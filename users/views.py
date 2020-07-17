@@ -3,11 +3,11 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from rest_framework import generics
 from django.contrib.auth.models import User 
-
+from rest_framework.generics import ListAPIView
 
 from .forms import CustomUserCreationForm
 from .models import CustomUser
-from .serializers import UserSerializer
+from .serializers import UserSerializer, CustomUserSerializer 
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -17,5 +17,9 @@ class SignUpView(CreateView):
 
 class UserCreate(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = ()
+    serializer_class = CustomUserSerializer
+    # permission_classes = ()
+
+class UserListView(ListAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
