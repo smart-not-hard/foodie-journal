@@ -4,13 +4,20 @@ from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/v1/', include('recipes.urls')),
+
     path('api/', include('recipes.urls')),
-    path('', include('django.contrib.auth.urls')),
-    path('custom-users/', include('users.urls')),
-    path('users/', include('django.contrib.auth.urls')),
+
+    # path('', include('django.contrib.auth.urls')),
+
+    path('users/', include('users.urls')),
+
+    # path('users/', include('django.contrib.auth.urls')),
+
     path('api-auth/', include('rest_framework.urls')), 
-    path('/api-auth/login/', include('users.urls'), name='home'),
-    path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
+    
+    # path('/api-auth/login/', include('users.urls')),
+
+    path('api/token/', jwt_views.TokenObtainPairView.as_view()),
+
+    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view()),
 ]

@@ -1,5 +1,5 @@
-from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView, ListCreateAPIView  #, APIView
-# from django.urls import reverse_lazy
+from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView, ListCreateAPIView, CreateAPIView  #, APIView
+
 from rest_framework import filters
 
 from .models import Recipe
@@ -13,8 +13,7 @@ class RecipesList(ListAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipesSerializer
 
-class RecipeCreate(ListCreateAPIView):
-    permission_classes = (ISAuthorOrReadOnly,)
+class RecipeCreate(CreateAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipesSerializer
 
