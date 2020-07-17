@@ -10,7 +10,7 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ('username', )
+        fields = ('username','email' )
         # excludes = ()
 
 class CustomUserChangeForm(UserChangeForm):
