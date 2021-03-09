@@ -1,4 +1,4 @@
-# [Team Smart not Hard](https://github.com/smart-not-hard) : PGC
+## [Team Smart not Hard](https://github.com/smart-not-hard) : PGC
 ## Members:
 - [Peng Chen](https://github.com/PengChen11)
 - [Corey Marchand](https://github.com/corey-marchand)
@@ -7,10 +7,10 @@
 # Live Site [Foodiejounals.com](https://foodiejournals.com)
 <!-- ## [Heroku Deployed Backend](https://foodie-journal.herokuapp.com/) -->
 <!-- ## [Vercel Deployed Site]() -->
-## Live Vercel Site [Foodiejounals.vercel.app](https://foodiejournals.vercel.app/)
-## [GitHub Repo](https://github.com/smart-not-hard/foodie-journal)
-## [GitHub Project Board](https://github.com/smart-not-hard/foodie-journal/projects/1)
-## [Front End Github](https://github.com/smart-not-hard/foodie-journals-front-end)
+### Live Vercel Site [Foodiejounals.vercel.app](https://foodiejournals.vercel.app/)
+### [GitHub Repo](https://github.com/smart-not-hard/foodie-journal)
+### [GitHub Project Board](https://github.com/smart-not-hard/foodie-journal/projects/1)
+### [Front End Github](https://github.com/smart-not-hard/foodie-journals-front-end)
 
 # Project description: 
 ## Foodie Journal :
